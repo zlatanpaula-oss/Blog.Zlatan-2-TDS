@@ -3,7 +3,7 @@ const artigos = document.querySelectorAll("article");
 artigos.forEach(function (artigo) {
     const btnLike = artigo.querySelector(".btn-like");
     const btnDislike = artigo.querySelector(".btn-dislike");
-    let statusReacao = null; // Guarda o estado atual do post ('like', 'dislike' ou null)
+    let statusReacao = null; 
 
     btnLike.addEventListener("click", function() {
         let contadorLike = btnLike.querySelector("span");
