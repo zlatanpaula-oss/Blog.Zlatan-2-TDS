@@ -1,4 +1,4 @@
-/* Estilos Globais */
+
 :root {
     --cor-principal: #e50914;
     --cor-fundo: #0f1115;
@@ -21,7 +21,7 @@ body {
     line-height: 1.6;
 }
 
-/* Cabeçalho */
+
 header {
     background-color: var(--cor-card);
     border-bottom: 3px solid var(--cor-principal);
@@ -61,7 +61,7 @@ nav a:hover {
     color: var(--cor-principal);
 }
 
-/* Banner Principal */
+
 .hero {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(15,17,21,1)), url('https://unsplash.com') no-repeat center center/cover;
     height: 350px;
@@ -85,7 +85,7 @@ nav a:hover {
     margin: 0 auto;
 }
 
-/* Layout em Colunas */
+
 main {
     max-width: 1200px;
     margin: 3rem auto;
@@ -100,7 +100,7 @@ main {
     .hero h2 { font-size: 2rem; }
 }
 
-/* Feed de Artigos */
+
 .artigos-container {
     display: flex;
     flex-direction: column;
@@ -157,7 +157,7 @@ article h2 {
     margin-bottom: 1.5rem;
 }
 
-/* Botões de Reação */
+
 .reacoes {
     display: flex;
     gap: 1rem;
@@ -182,11 +182,11 @@ button {
 button:hover { background-color: #3a4150; }
 button:active { transform: scale(0.95); }
 
-/* Estados ativos das reações */
+
 button.ativo-like { background-color: #1e4620; color: #4caf50; }
 button.ativo-dislike { background-color: #5c1d1d; color: #f44336; }
 
-/* Barra Lateral */
+
 aside {
     display: flex;
     flex-direction: column;
@@ -216,7 +216,7 @@ aside {
 }
 .widget ul li a:hover { color: var(--cor-texto); }
 
-/* Rodapé */
+
 footer {
     background-color: #08090c;
     text-align: center;
