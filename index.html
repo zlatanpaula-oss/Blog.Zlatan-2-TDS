@@ -4,7 +4,211 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutoDrive Blog | O Seu Guia Automotivo</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- CSS Embutido -->
+    <style>
+        /* Configurações Gerais / Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho / Menu */
+        header {
+            background-color: #111;
+            color: #fff;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        header h1 {
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        header h1 span {
+            color: #ff3f3f; /* Vermelho esportivo */
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff3f3f;
+        }
+
+        /* Banner Principal / Hero */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://unsplash.com') no-repeat center center/cover;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .hero-content h2 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container de Artigos */
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .artigos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        /* Cards dos Artigos */
+        article {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        article:hover {
+            transform: translateY(-5px);
+        }
+
+        article img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 25px;
+        }
+
+        .categoria {
+            background-color: #ff3f3f;
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .article-content h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        .artigo-autor {
+            font-size: 13px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .resumo {
+            color: #555;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Botões de Reação */
+        .reacoes {
+            display: flex;
+            gap: 10px;
+        }
+
+        .reacoes button {
+            background-color: #f0f2f5;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.2s;
+        }
+
+        .reacoes button:hover {
+            background-color: #e4e6eb;
+        }
+
+        .reacoes button.ativo-like {
+            background-color: #e7f3ff;
+            color: #1877f2;
+        }
+
+        .reacoes button.ativo-dislike {
+            background-color: #ffebe9;
+            color: #e81224;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #111;
+            color: #777;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        /* Responsividade Básica */
+        @media (max-width: 600px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+            .hero-content h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -28,6 +232,7 @@
 
     <main>
         <section class="artigos-container">
+            <!-- Artigo 1 -->
             <article>
                 <img src="https://unsplash.com" alt="Superesportivo elétrico">
                 <div class="article-content">
@@ -42,45 +247,72 @@
                 </div>
             </article>
 
+            <!-- Artigo 2 -->
             <article>
                 <img src="https://unsplash.com" alt="SUV robusto na terra">
                 <div class="article-content">
                     <span class="categoria">Avaliações</span>
-                    <h2>Guia Completo: Qual o melhor SUV Familiar para este ano?</h2>
-                    <p class="artigo-autor">Por: <strong>Mariana Costa</strong></p>
-                    <p class="resumo">Colocamos lado a lado os três principais utilitários esportivos do mercado. Analisamos espaço interno, consumo de combustível híbrido e sistemas de segurança ativa.</p>
+                    <h2>Desbravando Caminhos: O SUV que une Conforto e Força Bruta</h2>
+                    <p class="artigo-autor">Por: <strong>Ana Souza</strong></p>
+                    <p class="resumo">Colocamos o novo utilitário esportivo na lama e na rodovia para ver se ele entrega o luxo prometido sem perder a alma off-road. O resultado vai te surpreender.</p>
                     <div class="reacoes">
-                        <button class="btn-like">👍 <span>89</span></button>
+                        <button class="btn-like">👍 <span>98</span></button>
                         <button class="btn-dislike">👎 <span>2</span></button>
                     </div>
                 </div>
             </article>
         </section>
-
-        <aside>
-            <div class="widget">
-                <h3>Categorias</h3>
-                <ul>
-                    <li><a href="#">Lançamentos (12)</a></li>
-                    <li><a href="#">Avaliações Completas (24)</a></li>
-                    <li><a href="#">Clássicos & Raridades (8)</a></li>
-                </ul>
-            </div>
-
-            <div class="widget">
-                <h3>Mais Vistos</h3>
-                <ul>
-                    <li><a href="#">• Os 5 carros que menos desvalorizam</a></li>
-                    <li><a href="#">• Nova regulamentação de motores híbridos</a></li>
-                </ul>
-            </div>
-        </aside>
     </main>
 
     <footer>
-        <p>&copy; 2026 AutoDrive Blog. Todos os direitos reservados. Feito para entusiastas automotivos.</p>
+        <p>&copy; 2026 AutoDrive Blog. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- JavaScript Embutido -->
+    <script>
+        document.querySelectorAll('.reacoes').forEach(container => {
+            const likeBtn = container.querySelector('.btn-like');
+            const dislikeBtn = container.querySelector('.btn-dislike');
+            
+            const likeSpan = likeBtn.querySelector('span');
+            const dislikeSpan = dislikeBtn.querySelector('span');
+
+            let likes = parseInt(likeSpan.textContent);
+            let dislikes = parseInt(dislikeSpan.textContent);
+
+            likeBtn.addEventListener('click', () => {
+                if (likeBtn.classList.contains('ativo-like')) {
+                    likeBtn.classList.remove('ativo-like');
+                    likes--;
+                } else {
+                    likeBtn.classList.add('ativo-like');
+                    likes++;
+                    if (dislikeBtn.classList.contains('ativo-dislike')) {
+                        dislikeBtn.classList.remove('ativo-dislike');
+                        dislikes--;
+                        dislikeSpan.textContent = dislikes;
+                    }
+                }
+                likeSpan.textContent = likes;
+            });
+
+            disdislikeBtn = dislikeBtn.addEventListener('click', () => {
+                if (dislikeBtn.classList.contains('ativo-dislike')) {
+                    dislikeBtn.classList.remove('ativo-dislike');
+                    dislikes--;
+                } else {
+                    dislikeBtn.classList.add('ativo-dislike');
+                    dislikes++;
+                    if (likeBtn.classList.contains('ativo-like')) {
+                        likeBtn.classList.remove('ativo-like');
+                        likes--;
+                        likeSpan.textContent = likes;
+                    }
+                }
+                dislikeSpan.textContent = dislikes;
+            });
+        });
+    </script>
 </body>
 </html>
+
