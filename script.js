@@ -1,45 +1,45 @@
-const artigos = document.querySelectorAll("article");
+document.querySelectorAll('article').forEach(artigo => {
+    const btnLike = artigo.querySelector('.btn-like');
+    const btnDislike = artigo.querySelector('.btn-dislike');
+    
+    let likes = parseInt(btnLike.querySelector('span').innerText);
+    let dislikes = parseInt(btnDislike.querySelector('span').innerText);
 
-artigos.forEach(function (artigo) {
-    const btnLike = artigo.querySelector(".btn-like");
-    const btnDislike = artigo.querySelector(".btn-dislike");
-    let statusReacao = null; 
-
-    btnLike.addEventListener("click", function() {
-        let contadorLike = btnLike.querySelector("span");
-        let contadorDislike = btnDislike.querySelector("span");
-
-        if (statusReacao === "like") {
-            contadorLike.textContent = parseInt(contadorLike.textContent) - 1;
-            btnLike.classList.remove("ativo-like");
-            statusReacao = null;
-        } else {
-            if (statusReacao === "dislike") {
-                contadorDislike.textContent = parseInt(contadorDislike.textContent) - 1;
-                btnDislike.classList.remove("ativo-dislike");
+    btnLike.addEventListener('click', () => {
+        if (!btnLike.classList.contains('active')) {
+            likes++;
+            btnLike.querySelector('span').innerText = likes;
+            btnLike.classList.add('active');
+            
+            
+            if (btnDislike.classList.contains('active')) {
+                dislikes--;
+                btnDislike.querySelector('span').innerText = dislikes;
+                btnDislike.classList.remove('active');
             }
-            contadorLike.textContent = parseInt(contadorLike.textContent) + 1;
-            btnLike.classList.add("ativo-like");
-            statusReacao = "like";
+        } else {
+            likes--;
+            btnLike.querySelector('span').innerText = likes;
+            btnLike.classList.remove('active');
         }
     });
 
-    btnDislike.addEventListener("click", function() {
-        let contadorLike = btnLike.querySelector("span");
-        let contadorDislike = btnDislike.querySelector("span");
-
-        if (statusReacao === "dislike") {
-            contadorDislike.textContent = parseInt(contadorDislike.textContent) - 1;
-            btnDislike.classList.remove("ativo-dislike");
-            statusReacao = null;
-        } else {
-            if (statusReacao === "like") {
-                contadorLike.textContent = parseInt(contadorLike.textContent) - 1;
-                btnLike.classList.remove("ativo-like");
+    btnDislike.addEventListener('click', () => {
+        if (!btnDislike.classList.contains('active')) {
+            dislikes++;
+            btnDislike.querySelector('span').innerText = dislikes;
+            btnDislike.classList.add('active');
+            
+            
+            if (btnLike.classList.contains('active')) {
+                likes--;
+                btnLike.querySelector('span').innerText = likes;
+                btnLike.classList.remove('active');
             }
-            contadorDislike.textContent = parseInt(contadorDislike.textContent) + 1;
-            btnDislike.classList.add("ativo-dislike");
-            statusReacao = "dislike";
+        } else {
+            dislikes--;
+            btnDislike.querySelector('span').innerText = dislikes;
+            btnDislike.classList.remove('active');
         }
     });
 });
