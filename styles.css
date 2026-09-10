@@ -1,0 +1,138 @@
+:root {
+    --bg-color: #0b0c10;
+    --card-bg: #1f2833;
+    --text-color: #c5c6c7;
+    --accent-neon: #66fcf1;
+    --accent-orange: #ff4500;
+    --accent-yellow: #fbc02d;
+    --border-default: transparent;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 20px;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, var(--accent-orange), #900c3f);
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 32px rgba(255, 69, 0, 0.3);
+}
+
+header h1 {
+    font-size: 3.2rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 4px 4px 0px #000;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: bold;
+    opacity: 0.9;
+}
+
+.blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.post-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-default);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(102, 252, 241, 0.2);
+}
+
+.image-container {
+    width: 100%;
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.post-card:hover .image-container img {
+    transform: scale(1.05);
+}
+
+.post-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.post-tag {
+    align-self: flex-start;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.card-1 .post-tag { background-color: var(--accent-orange); color: #fff; }
+.card-2 .post-tag { background-color: var(--accent-neon); }
+.card-3 .post-tag { background-color: var(--accent-yellow); }
+.card-4 .post-tag { background-color: #ff00ff; color: #fff; }
+.card-5 .post-tag { background-color: #00ffff; }
+
+.post-title {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.post-excerpt {
+    font-size: 0.95rem;
+    color: #45a29e;
+    flex-grow: 1;
+}
+
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 20px;
+    color: #45a29e;
+    font-size: 0.9rem;
+}
